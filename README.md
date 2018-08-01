@@ -11,19 +11,19 @@ I created two Dockerfile to deploy to Deploy.
 One for the Java jar and java executable.
 Other for node and Angular 6 application.
 
-To Deploy to Docker:
-For Spring Boot Server:
-Open docker terminal
-Navigate inside Server/demo 
-docker build -f Dockerfile -t demo .
-docker run -p 8080:8080 demo
+## To Deploy to Docker:
+#### For Spring Boot Server:
+* Open docker terminal
+* Navigate inside Server/demo 
+* docker build -f Dockerfile -t demo .
+* docker run -p 8080:8080 demo
 
 
-For Angular Client:
-Open docker terminal
-Navigate Client/UrlClient
-docker build -t urlclient:prod .
-docker run -p 80:80 urlclient:prod
+#### For Angular Client:
+* Open another docker terminal
+* Navigate Client/UrlClient
+* docker build -t urlclient:prod .
+* docker run -p 80:80 urlclient:prod
 
 
 
