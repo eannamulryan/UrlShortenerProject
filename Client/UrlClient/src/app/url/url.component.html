@@ -1,0 +1,32 @@
+<div class="container col-4">
+  <h1>Short Url Creator</h1>
+  <!-- Content here -->
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Short Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let url of anArray">
+        <td>{{ url.id }}</td>
+        <td><button (click)='originalUrl(url.shortUrl)' class="btn btn-link">{{url.shortUrl}}</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <label>
+    Enter Url:
+    <input type="url" [formControl]="url" placeholder="www.google.ie" required>
+  </label>
+  <button (click)="shortenUrl()">Shorten Url</button>
+  <div *ngIf="url.invalid && (url.dirty || url.touched)"
+      class="alert alert-danger">
+  
+    <div *ngIf="url.errors.required">
+      Url is required.
+    </div>
+  </div>
+</div>
+
